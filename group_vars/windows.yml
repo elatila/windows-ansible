@@ -1,4 +1,4 @@
-ansible_user: Change this value to specified user on Powershell script
-ansible_password: "Change this value to specified password on Powershell script"
+ansible_user: Change this value to the specified user on variable $Username on Powershell script
+ansible_password: "Change this value to the specified user on variable $Password on Powershell script"
 ansible_port: 5985
 ansible_connection: winrm
