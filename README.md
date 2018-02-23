@@ -1,5 +1,5 @@
 # Managing Windows Server Using Ansible
-Simple script and example for managing windows server using Ansible.
+Simple script and example for managing windows server using [Ansible](http://docs.ansible.com/ansible/latest/index.html). Here is the list of module that can be running by ansible on windows machine  http://docs.ansible.com/ansible/latest/list_of_windows_modules.html
 
 The Powershell script will configure the WinRM to accept only specified subnet to connect to, please take a look for variable `$Subnet` on the `EnableRemotingAnsible.ps1` script
 
