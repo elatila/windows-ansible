@@ -1,4 +1,5 @@
-# This script will run the EnableRemotingAnsible.ps1 script remotely 
+# This script taken from https://4sysops.com/archives/use-powershell-invoke-command-to-run-scripts-on-remote-computers/
+# it will run the EnableRemotingAnsible.ps1 script remotely 
 # on all computer listed on $RemoteComputers variable
 # please adjust -FilePath parameter to path where your script reside on local PC
 $RemoteComputers = @("PC1","PC2")
