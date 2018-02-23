@@ -177,30 +177,6 @@ If ($EnableCredSSP)
     }
 }
 
-# Test a remoting connection to localhost, which should work.
-$httpResult = Invoke-Command -ComputerName "localhost" -ScriptBlock {$env:COMPUTERNAME} -ErrorVariable httpError -ErrorAction SilentlyContinue
-$httpsOptions = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck
-
-$httpsResult = New-PSSession -UseSSL -ComputerName "localhost" -SessionOption $httpsOptions -ErrorVariable httpsError -ErrorAction SilentlyContinue
-
-If ($httpResult -and $httpsResult)
-{
-    Write-Verbose "HTTP: Enabled | HTTPS: Enabled"
-}
-ElseIf ($httpsResult -and !$httpResult)
-{
-    Write-Verbose "HTTP: Disabled | HTTPS: Enabled"
-}
-ElseIf ($httpResult -and !$httpsResult)
-{
-    Write-Verbose "HTTP: Enabled | HTTPS: Disabled"
-}
-Else
-{
-    Write-Log "Unable to establish an HTTP or HTTPS remoting session."
-    Throw "Unable to establish an HTTP or HTTPS remoting session."
-}
-
 # Setup new local admin user
 $Username = "change this to desired username"
 $Password = "change this to desired password"
